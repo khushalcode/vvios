@@ -1,0 +1,15 @@
+﻿*.jks
+*.p12
+*.cer
+*.mobileprovision
+*base64.txt
+key.properties
+build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+**/android/app/.cxx/
+**/android/.gradle/
+**/ios/Pods/
+**/ios/.symlinks/
+**/ios/Flutter/ephemeral/
