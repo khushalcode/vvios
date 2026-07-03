@@ -24,6 +24,15 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
+      - name: Debug certificate decode
+        env:
+          IOS_CERTIFICATE_BASE64: ${{ secrets.IOS_CERTIFICATE_BASE64 }}
+          IOS_CERTIFICATE_PASSWORD: ${{ secrets.IOS_CERTIFICATE_PASSWORD }}
+        run: |
+          echo "$IOS_CERTIFICATE_BASE64" | base64 --decode > certificate.p12
+          ls -la certificate.p12
+          openssl pkcs12 -info -in certificate.p12 -noout -passin pass:"$IOS_CERTIFICATE_PASSWORD"
+
       - name: Import Distribution Certificate
         env:
           IOS_CERTIFICATE_BASE64: ${{ secrets.IOS_CERTIFICATE_BASE64 }}
