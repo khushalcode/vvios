@@ -1,4 +1,4 @@
-﻿name: Build Vendor iOS IPA
+name: Build Vendor iOS IPA
 
 on:
   workflow_dispatch:
