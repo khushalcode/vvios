@@ -44,7 +44,9 @@ jobs:
           security create-keychain -p "" build.keychain
           security default-keychain -s build.keychain
           security unlock-keychain -p "" build.keychain
-          security import certificate.p12 -k build.keychain -P "$IOS_CERTIFICATE_PASSWORD" -T /usr/bin/codesign
+          openssl pkcs12 -in certificate.p12 -nodes -passin pass:"$IOS_CERTIFICATE_PASSWORD" -out temp_cert.pem
+          openssl pkcs12 -export -in temp_cert.pem -out certificate_legacy.p12 -passout pass:"$IOS_CERTIFICATE_PASSWORD" -certpbe PBE-SHA1-3DES -keypbe PBE-SHA1-3DES -macalg sha1
+          security import certificate_legacy.p12 -k build.keychain -P "$IOS_CERTIFICATE_PASSWORD" -T /usr/bin/codesign
           security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "" build.keychain
 
       - name: Install Provisioning Profile
