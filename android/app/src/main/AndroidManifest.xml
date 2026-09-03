@@ -38,7 +38,7 @@
         </queries>
 
         <application
-            android:label="Nc Mart - Vendor"
+            android:label="Talabego Vendor"
             android:name="${applicationName}"
             android:extractNativeLibs="true"
             android:requestLegacyExternalStorage="true"

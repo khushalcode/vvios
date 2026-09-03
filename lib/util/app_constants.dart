@@ -1,12 +1,12 @@
 import 'package:sixam_mart_store/features/language/domain/models/language_model.dart';
 import 'package:sixam_mart_store/util/images.dart';
 class AppConstants {
-  static const String appName = 'Nc Mart - Vendor';
+  static const String appName = 'Talabego Vendor';
   static const double appVersion = 3.5; ///Flutter SDK: 3.38.1
   static const String fontFamily = 'Poppins';
   static const double limitOfPickedVideoSizeInMB = 50;
   static const double maxSizeOfASingleFile = 10;
-  static const String baseUrl = 'https://admin.nearcaremart.com';
+  static const String baseUrl = 'https://admin.talabego.com';
   static const String configUri = '/api/v1/config';
   static const String loginUri = '/api/v1/auth/vendor/login';
   static const String forgetPasswordUri = '/api/v1/auth/vendor/forgot-password';
